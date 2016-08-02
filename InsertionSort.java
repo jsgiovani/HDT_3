@@ -1,29 +1,24 @@
-/**
- * 
- */
+//codigo radixSort basado en: 
+//codigofacilito.(27 marzo de 2012). Ordenamiento por Inserción (Insertion Sort) en Java [Archivo de video]. Recuperado de
+//https://www.youtube.com/watch?v=O4iuk9VhqYs
 
-/**
- * @author Giovanni
- *
- * * @@ codigo InsertionSort basado en:
- * 
- * http://courses.cs.washington.edu/courses/cse373/01wi/slides/Measurement/sld010.htm
- * 
- */
+
 public class InsertionSort {
-	
-	public InsertionSort() {
-		// TODO Auto-generated constructor stub
-	}
-	public static void intInsertionSort (int [] a) {
-		for (int i = 1; i< a.length; i++){
-			int temp = a[i];
-			int j;
-
-			for (j = i - 1; j >= 0 && temp < a[j]; j--)
-				a[j + 1] = a[j];
-
-			a[j + 1] = temp;		
+	//Metodo InsertionSort *Java
+	public void insertionSort (int [] myArray){
+		
+		//Variables autilizar:
+		int auxiliar, contador1, contador2;
+		//Primer ciclo que sirve para recorrer el tamamaño del arreglo de izquierda a derecha y guarda en una variable axiliar 
+		//el valor del arreglo en la posicion n
+		for(contador1 = 1; contador1 < myArray.length;contador1++){
+			auxiliar = myArray[contador1];
+			//Ciclo que sirve para intercambiar las posiciones de cada uno de los contenidos del arreglo de acuerdo al valor de
+			//cada numero
+			for(contador2 = contador1 - 1; contador2 > 0 && myArray[contador2] > auxiliar; contador2--){
+				myArray[contador2 + 1] = myArray[contador2];
+				myArray[contador2] = auxiliar;
+			}
 		}
-	}
+	}	
 }
